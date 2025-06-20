@@ -10,6 +10,9 @@ SELECT cst_firstname
 FROM silver.crm_cust_info			-- bronze/silver
 WHERE cst_firstname != TRIM(cst_firstname)
 
+SELECT * FROM bronze.erp_px_cat_g1v2
+WHERE cat != TRIM(cat) OR subcat != TRIM(subcat) OR maintenance != TRIM(maintenance)
+
 -- Check for data inconsistency
 SELECT DISTINCT cst_gndr
 from silver.crm_cust_info			-- bronze/silver
